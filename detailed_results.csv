@@ -1,0 +1,121 @@
+Image_ID,Model,Caption,BLEU4,ROUGE_L,CIDEr,BERTScore,Caption_Length
+1243756.jpg,GPT,"A man wearing funny clothes and a scarf on his head sits outside, looking to the side.",0,0.285714286,0.070955882,0.384615385,17
+1243756.jpg,BLIP-2,a man sitting on a lawn chair,0,0.444444444,0.224285714,0.5,7
+1243756.jpg,ClipCap,A man sitting on a bench with a microphone.,0,0.4,0.152777778,0.352941176,9
+1243756.jpg,Claude,"A man sitting in a folding chair at an outdoor event, with an ice cream truck in the background.",0.209734258,0.388888889,0.143415678,0.428571429,19
+1254659.jpg,GPT,Two workers prepare food at a Mongolian BBQ restaurant under a bright neon sign.,0.242195354,0.545454545,0.140671828,0.592592593,14
+1254659.jpg,BLIP-2,"a neon sign that says ""mongolian bbq""",0,0.272727273,0.073809524,0.285714286,7
+1254659.jpg,ClipCap,A man standing next to a table with a grill.,0,0.16,0.065,0.133333333,10
+1254659.jpg,Claude,Two people working in the kitchen of a Mongolian BBQ restaurant.,0.35084397,0.555555556,0.163926768,0.555555556,11
+1283466.jpg,GPT,Two big construction machines are tearing down a building surrounded by rubble.,0,0.363636364,0.064090909,0.380952381,12
+1283466.jpg,BLIP-2,a pile of rubble,0.60653066,0.421052632,0.2625,0.5,4
+1283466.jpg,ClipCap,A pile of garbage sitting on top of a dirt field.,0.339325134,0.384615385,0.116098485,0.476190476,11
+1283466.jpg,Claude,Construction equipment demolishing a building with debris scattered around.,0,0.210526316,0.05,0.222222222,9
+134206.jpg,GPT,Baseball players are on the field during a game in a large stadium.,0,0.518518519,0.130244755,0.56,13
+134206.jpg,BLIP-2,a baseball game in progress,0,0.363636364,0.1125,0.363636364,5
+134206.jpg,ClipCap,A baseball game is in progress with the pitcher throwing the ball.,0,0.444444444,0.079924242,0.470588235,12
+134206.jpg,Claude,A baseball game in progress at a stadium with players on the field.,0,0.434782609,0.116666667,0.56,13
+148284.jpg,GPT,A smiling man wearing a yellow shirt and apron stands by an information board with a cart.,0.371842144,0.578947368,0.201957283,0.571428571,17
+148284.jpg,BLIP-2,a man in a yellow shirt,0.367879441,0.666666667,0.54,0.625,6
+148284.jpg,ClipCap,A man standing in front of a luggage cart.,0.3678278,0.5,0.362698413,0.545454545,9
+148284.jpg,Claude,A smiling man in an orange shirt standing with luggage at what appears to be a transit station.,0,0.266666667,0.091993464,0.387096774,18
+178045.jpg,GPT,Young girls are dancing in colorful traditional dresses during a cultural performance.,0,0.260869565,0.050378788,0.260869565,12
+178045.jpg,BLIP-2,a group of women in mexican dress dancing,0,0.421052632,0.136011905,0.454545455,8
+178045.jpg,ClipCap,A woman in a white dress with a horse.,0,0.3,0.1,0.333333333,9
+178045.jpg,Claude,Traditional dancers in white costumes performing with drums outdoors.,0,0.3,0.05625,0.3,9
+205842.jpg,GPT,A little girl is pushing a stroller with a small boy sitting in it.,0,0.64516129,0.224954212,0.64,14
+205842.jpg,BLIP-2,two children pushing a stroller down a sidewalk,0,0.333333333,0.148214286,0.375,8
+205842.jpg,ClipCap,A boy and girl cleaning a blue fire hydrant.,0,0.307692308,0.11875,0.416666667,9
+205842.jpg,Claude,A young girl pushing a small child in a blue stroller on a sidewalk.,0.19388672,0.451612903,0.195067433,0.5,14
+256063.jpg,GPT,Three people are selling homemade goods at a market stall.,0,0.333333333,0.076111111,0.333333333,10
+256063.jpg,BLIP-2,a woman standing at a table with jars of jam,0,0.285714286,0.071111111,0.235294118,10
+256063.jpg,ClipCap,A group of people standing around a table with food.,0,0.210526316,0.065555556,0.222222222,10
+256063.jpg,Claude,People working at a farmer's market stand selling jars and produce.,0,0.315789474,0.084191919,0.315789474,11
+301246.jpg,GPT,People are working together with ropes on a dock beside large ships.,0,0.347826087,0.076136364,0.380952381,12
+301246.jpg,BLIP-2,a group of people on a dock,0.840896415,0.666666667,0.260119048,0.666666667,7
+301246.jpg,ClipCap,A group of people on skis on a dock.,0.513345048,0.6,0.18343254,0.625,9
+301246.jpg,Claude,A group of people playing tug-of-war on what looks like a dock or pier.,0.165039496,0.48,0.093419081,0.454545455,14
+353913.jpg,GPT,A man wearing a hoodie is sleeping on the ground outside a closed door.,0.457231345,0.466666667,0.199945887,0.444444444,14
+353913.jpg,BLIP-2,a man is sleeping on the sidewalk outside of a building,0.449733208,0.48,0.21290404,0.52173913,11
+353913.jpg,ClipCap,A man laying on the ground next to a black bag.,0,0.444444444,0.136010101,0.4,11
+353913.jpg,Claude,A person lying on the ground sleeping or resting against some building doors.,0,0.37037037,0.082750583,0.461538462,13
+36979.jpg,GPT,A group of people are sitting around a table playing poker.,0,0.421052632,0.138030303,0.444444444,11
+36979.jpg,BLIP-2,a group of men sitting around a table playing poker,0,0.666666667,0.18875,0.705882353,10
+36979.jpg,ClipCap,A group of men sitting around a table together.,0,0.470588235,0.165178571,0.5,9
+36979.jpg,Claude,A group of men playing poker around a green felt table in what looks like a home game room.,0,0.444444444,0.121577227,0.48,19
+371897.jpg,GPT,A young man in a red and grey shirt is walking alone on a rooftop.,0.481440026,0.594594595,0.235173993,0.580645161,15
+371897.jpg,BLIP-2,a man walking on a roof,0,0.428571429,0.18,0.461538462,6
+371897.jpg,ClipCap,A man standing on a skateboard in a yard.,0,0.380952381,0.159027778,0.4,9
+371897.jpg,Claude,A man in a red sweater and jeans standing in a backyard garden area.,0.325596413,0.461538462,0.210064935,0.526315789,14
+371902.jpg,GPT,Three people are having a casual meal and relaxing on a small rooftop patio.,0,0.307692308,0.071978022,0.347826087,14
+371902.jpg,BLIP-2,a group of people sitting on a patio,0.5,0.470588235,0.165357143,0.4,8
+371902.jpg,ClipCap,A group of people sitting around a table outdoors.,0,0.444444444,0.103670635,0.375,9
+371902.jpg,Claude,Three people sitting on a rooftop patio having drinks and socializing.,0,0.275862069,0.09020202,0.380952381,11
+371903.jpg,GPT,Two men are sitting side by side reading books near a table of food.,0.214465396,0.48,0.144197469,0.5,14
+371903.jpg,BLIP-2,two men sitting on a chair,0,0.375,0.1775,0.454545455,6
+371903.jpg,ClipCap,Two men sitting on a bench reading books.,0,0.444444444,0.161904762,0.5,8
+371903.jpg,Claude,Two men reading while sitting in chairs on what appears to be a rooftop or outdoor area.,0,0.37037037,0.092487745,0.444444444,17
+390369.jpg,GPT,A street performer dressed in gold stands still while people walk by and observe.,0.202729092,0.344827586,0.107109557,0.461538462,14
+390369.jpg,BLIP-2,a woman dressed in a costume walks down the street,0,0.476190476,0.159027778,0.476190476,10
+390369.jpg,ClipCap,A woman in a costume is riding a horse.,0,0.5,0.154365079,0.5,9
+390369.jpg,Claude,A street performer dressed in elaborate period costume entertaining passersby on a city street.,0.211525451,0.413793103,0.118098568,0.454545455,14
+438106.jpg,GPT,Several children are painting at a colorful outdoor art table.,0,0.421052632,0.076111111,0.526315789,10
+438106.jpg,BLIP-2,a group of children standing around a table painting,0,0.4,0.151785714,0.421052632,9
+438106.jpg,ClipCap,A group of children sitting around a table with pizza.,0,0.380952381,0.119027778,0.4,10
+438106.jpg,Claude,"Children and adults doing an art activity, working on a large floor mosaic or mural.",0,0.303030303,0.040238095,0.375,15
+490870.jpg,GPT,A small girl is sleeping on someone's lap during a bus or train ride.,0,0.285714286,0.061263736,0.307692308,14
+490870.jpg,BLIP-2,a little girl sleeping on a man's lap,0,0.352941176,0.095535714,0.375,8
+490870.jpg,ClipCap,A woman and two children sleeping in an airplane.,0,0.4,0.090277778,0.533333333,9
+490870.jpg,Claude,People resting or sleeping in what appears to be the back seat of a vehicle.,0,0.129032258,0.023333333,0.19047619,15
+574181.jpg,GPT,Two men are sweeping the floor in an empty indoor room.,0.378179043,0.545454545,0.253661616,0.636363636,11
+574181.jpg,BLIP-2,two men cleaning a room,0,0.571428571,0.255,0.571428571,5
+574181.jpg,ClipCap,Two men are walking in a room with a white wall.,0,0.6,0.219040404,0.736842105,11
+574181.jpg,Claude,Two people cleaning or painting a large empty room with yellow walls.,0,0.285714286,0.0625,0.296296296,12
+65567.jpg,GPT,A man in a suit walks arm-in-arm with a woman in a red dress holding a bouquet at a formal event.,0.212700242,0.388888889,0.133172515,0.4,21
+65567.jpg,BLIP-2,a man and woman in a red dress,0.610195043,0.608695652,0.228333333,0.6,8
+65567.jpg,ClipCap,A man and a woman in wedding attire are standing together.,0,0.476190476,0.13510101,0.526315789,11
+65567.jpg,Claude,A wedding couple in formal attire - the bride in a red dress and groom in a dark suit - posing together.,0.146105345,0.27027027,0.085661882,0.333333333,22
+667626.jpg,GPT,"A child is lying back in shallow water at the beach, relaxing.",0.194122581,0.5,0.20239899,0.5,12
+667626.jpg,BLIP-2,a young girl laying on her back in the water,0.577350269,0.615384615,0.339742063,0.666666667,10
+667626.jpg,ClipCap,A woman laying on a surfboard in the ocean.,0,0.32,0.135416667,0.363636364,9
+667626.jpg,Claude,"A young person relaxing on a beach, lying in shallow water.",0,0.315789474,0.138636364,0.384615385,11
+675153.jpg,GPT,Two men are practicing martial arts inside a dojo.,0.431670011,0.6,0.162400794,0.666666667,9
+675153.jpg,BLIP-2,two men in white kimonos practicing aikido,0,0.421052632,0.148809524,0.444444444,7
+675153.jpg,ClipCap,Two men are wrestling in an arena with a large object.,0,0.434782609,0.107828283,0.454545455,11
+675153.jpg,Claude,Two people in white martial arts uniforms practicing what appears to be aikido or judo.,0,0.307692308,0.070714286,0.333333333,15
+726414.jpg,GPT,"A skydiver hangs from the wing of a plane high above farmland, ready to jump.",0.347915948,0.375,0.11514652,0.4,15
+726414.jpg,BLIP-2,a man in a blue shirt and black pants is flying a red and white plane,0,0.206896552,0.065625,0.307692308,16
+726414.jpg,ClipCap,A man sitting on a parachute in a small airplane.,0,0.260869565,0.08,0.285714286,10
+726414.jpg,Claude,"A person skydiving with a parachute open, photographed from above with fields visible below.",0,0.173913043,0.046703297,0.2,14
+764507.jpg,GPT,"Four friends sit on the floor together, enjoying a meal and talking.",0,0.434782609,0.113106061,0.434782609,12
+764507.jpg,BLIP-2,a group of people sitting around a table,0.350911977,0.588235294,0.161488095,0.625,8
+764507.jpg,ClipCap,A group of people sitting around a wooden table.,0.343294524,0.555555556,0.142063492,0.588235294,9
+764507.jpg,Claude,A group of friends sitting on a living room floor playing cards or a board game.,0,0.37037037,0.102142857,0.4,16
+793558.jpg,GPT,A little girl helps a boy tie or adjust his pant leg on the sidewalk.,0,0.428571429,0.105549451,0.413793103,15
+793558.jpg,BLIP-2,a young boy and girl are playing with a cell phone,0,0.3125,0.121010101,0.4,11
+793558.jpg,ClipCap,A couple of kids standing next to each other.,0,0.142857143,0.027777778,0.166666667,9
+793558.jpg,Claude,"Two children crouching down on pavement, appearing to examine something on the ground.",0,0.114285714,0.019230769,0.086956522,13
+807129.jpg,GPT,An elderly man with long white hair plays the flute while sitting near a fence.,0.260549323,0.484848485,0.158598901,0.606060606,15
+807129.jpg,BLIP-2,man with long white beard,0,0.352941176,0.1675,0.352941176,5
+807129.jpg,ClipCap,A man in a white robe leaning against a rail.,0,0.363636364,0.115555556,0.315789474,10
+807129.jpg,Claude,An older man with a long beard playing a flute while sitting by a railing.,0.247369295,0.606060606,0.20268315,0.64516129,15
+81641.jpg,GPT,A man is doing a handstand on a pole in front of a tall historic building,0,0.5,0.137797619,0.5,16
+81641.jpg,BLIP-2,a man doing a handstand on top of a pole in front of a building,0,0.434782609,0.125750916,0.444444444,15
+81641.jpg,ClipCap,A man sitting on a roof with a kite.,0,0.470588235,0.136805556,0.428571429,9
+81641.jpg,Claude,A person doing a handstand against a tall brick building with decorative domes.,0,0.24,0.053846154,0.25,13
+854749.jpg,GPT,A man pushes a shopping cart down an aisle full of snacks in a large grocery store.,0.194918457,0.368421053,0.120716036,0.388888889,17
+854749.jpg,BLIP-2,a man is walking down a aisle of a store,0,0.413793103,0.165138889,0.4,10
+854749.jpg,ClipCap,A man is walking through a grocery store aisle.,0,0.357142857,0.125694444,0.344827586,9
+854749.jpg,Claude,"A person shopping in a grocery store aisle filled with various products and ""NEW"" labels.",0,0.275862069,0.080714286,0.342857143,15
+881336.jpg,GPT,"A woman sits at a kitchen table with drinks and snacks, while her friends stand and point.",0.188423937,0.387096774,0.096818978,0.357142857,17
+881336.jpg,BLIP-2,a woman pointing at a man,0,0.3,0.13,0.333333333,6
+881336.jpg,ClipCap,A group of people sitting around a kitchen table.,0.330100831,0.52173913,0.160119048,0.476190476,9
+881336.jpg,Claude,"Young people socializing in a kitchen, with one person pointing and others sitting around a counter.",0,0.25,0.056666667,0.275862069,16
+960092.jpg,GPT,A large crowd gathers under a tent at an outdoor fair or festival.,0,0.454545455,0.089801865,0.476190476,13
+960092.jpg,BLIP-2,a crowd of people standing around a food stand,0.354948106,0.5,0.18343254,0.476190476,9
+960092.jpg,ClipCap,A crowd of people standing around a food stand.,0.354948106,0.5,0.18343254,0.476190476,9
+960092.jpg,Claude,A crowd of people gathered around outdoor game booths at what appears to be a fair or festival.,0.181672557,0.484848485,0.114918301,0.533333333,18
+984950.jpg,GPT,"A group of men sit in a circle on a rooftop, chatting and relaxing.",0.676778112,0.769230769,0.309282384,0.727272727,14
+984950.jpg,BLIP-2,a group of people sitting on a roof,0,0.6,0.289880952,0.705882353,8
+984950.jpg,ClipCap,A group of men sitting on top of a white boat.,0.519307178,0.695652174,0.318055556,0.631578947,11
+984950.jpg,Claude,A group of men sitting together having a meal or break on what looks like a construction site or rooftop.,0.21314569,0.4375,0.163916409,0.482758621,20
