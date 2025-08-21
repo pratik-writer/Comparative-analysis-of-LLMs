@@ -8,11 +8,11 @@ processor = Blip2Processor.from_pretrained("Salesforce/blip2-opt-2.7b")
 model = Blip2ForConditionalGeneration.from_pretrained("Salesforce/blip2-opt-2.7b", torch_dtype=torch.float16)
 model.to("cuda" if torch.cuda.is_available() else "cpu")
 
-# Folder of images
+
 image_folder = '/content/images'
 results = []
 
-# Generate captions
+
 for image_name in os.listdir(image_folder):
     if not image_name.lower().endswith(('.jpg', '.png', '.jpeg')):
         continue
