@@ -8,25 +8,21 @@ import os
 from pathlib import Path
 from tqdm import tqdm
 
-# ============================================================================
-# CONFIGURATION SECTION - MODIFY THESE PATHS
-# ============================================================================
 
-# Set your paths here
-IMAGE_FOLDER = "/kaggle/input/images"           # Path to your images folder
-MODEL_PATH = "/kaggle/input/weights2/pytorch/default/1/coco_weights.pt"   # Path to your ClipCap model file
-OUTPUT_FILE = "/kaggle/working/captions.xlsx"     # Where to save the Excel file
-PREFIX_LENGTH = 10                         # Should match your model configuration
-MAX_CAPTION_LENGTH = 50                    # Maximum length of generated captions
+IMAGE_FOLDER = "/kaggle/input/images"           
+MODEL_PATH = "/kaggle/input/weights2/pytorch/default/1/coco_weights.pt"   
+OUTPUT_FILE = "/kaggle/working/captions.xlsx"     
+PREFIX_LENGTH = 10                         
+MAX_CAPTION_LENGTH = 50                    
 
-# ============================================================================
 
-# Handle transformers import
+
+
 try:
     from transformers import GPT2Tokenizer, GPT2LMHeadModel
-    print("✓ Transformers loaded successfully")
+    print("Transformers loaded successfully")
 except ImportError as e:
-    print(f"❌ Error importing transformers: {e}")
+    print(f" Error importing transformers: {e}")
     print("Installing transformers...")
     from transformers import GPT2Tokenizer, GPT2LMHeadModel
 
@@ -37,7 +33,7 @@ CLIP_PREPROCESS = None
 def install_and_load_clip():
     global CLIP_MODEL, CLIP_PREPROCESS
     
-    # Try original CLIP first
+    #
     try:
         import clip
         model, preprocess = clip.load("ViT-B/32", device="cpu")
@@ -49,23 +45,23 @@ def install_and_load_clip():
         print("Original CLIP not available, installing...")
         
         try:
-            # Install original CLIP
+            
             import clip
             model, preprocess = clip.load("ViT-B/32", device="cpu")
             CLIP_MODEL = model
             CLIP_PREPROCESS = preprocess
-            print("✓ Installed and loaded original OpenAI CLIP")
+            print(" Installed and loaded original OpenAI CLIP")
             return True
         except:
             print("Failed to install original CLIP, trying open_clip...")
     
-    # Try open_clip as fallback
+    
     try:
         import open_clip
         model, _, preprocess = open_clip.create_model_and_transforms('ViT-B-32', pretrained='openai')
         CLIP_MODEL = model
         CLIP_PREPROCESS = preprocess
-        print("✓ Loaded open_clip")
+        print(" Loaded open_clip")
         return True
     except ImportError:
         try:
@@ -73,12 +69,12 @@ def install_and_load_clip():
             model, _, preprocess = open_clip.create_model_and_transforms('ViT-B-32', pretrained='openai')
             CLIP_MODEL = model
             CLIP_PREPROCESS = preprocess
-            print("✓ Installed and loaded open_clip")
+            print(" Installed and loaded open_clip")
             return True
         except:
-            print("❌ Failed to install open_clip")
+            print(" Failed to install open_clip")
     
-    print("❌ No CLIP implementation could be loaded!")
+    print(" No CLIP implementation could be loaded")
     return False
 
 class MLP(nn.Module):
@@ -140,37 +136,37 @@ def generate_caption(model, tokenizer, image_path, device, max_length=50):
     """Generate caption for a single image using greedy decoding"""
     model.eval()
     
-    # Encode image
+    
     clip_features = encode_image(image_path, device)
     
     with torch.no_grad():
         prefix_embed = model.clip_project(clip_features).view(1, model.prefix_length, -1)
         
-        # Start with empty sequence
+        
         generated = torch.tensor([]).long().to(device).unsqueeze(0)
         
         for i in range(max_length):
-            # Get embeddings for generated tokens
+            
             if generated.shape[1] > 0:
                 embeddings = model.gpt.transformer.wte(generated)
                 combined_embeds = torch.cat([prefix_embed, embeddings], dim=1)
             else:
                 combined_embeds = prefix_embed
             
-            # Get next token prediction
+            
             outputs = model.gpt(inputs_embeds=combined_embeds)
             logits = outputs.logits[0, -1, :]
             
-            # Sample next token (greedy)
+            
             next_token = torch.argmax(logits, dim=-1).unsqueeze(0).unsqueeze(0)
             
-            # Check for end token
+           
             if next_token.item() == tokenizer.eos_token_id:
                 break
                 
             generated = torch.cat([generated, next_token], dim=1)
         
-        # Decode to text
+        
         if generated.shape[1] > 0:
             return tokenizer.decode(generated[0], skip_special_tokens=True)
         else:
@@ -181,32 +177,32 @@ def load_model(model_path, device, prefix_length=10):
     try:
         model = ClipCaptionPrefix(prefix_length=prefix_length)
         
-        # Try loading with strict=False to handle potential key mismatches
+       
         state_dict = torch.load(model_path, map_location=device)
         model.load_state_dict(state_dict, strict=False)
         
         model.to(device)
         model.eval()
-        print(f"✓ Model loaded successfully from {model_path}")
+        print(f"Model loaded successfully from {model_path}")
         return model
     except Exception as e:
-        print(f"❌ Error loading model: {e}")
+        print(f" Error loading model: {e}")
         return None
 
 def run_captioning():
     """Main function to run the captioning process"""
     
-    print("🚀 Starting ClipCap Image Captioning...")
+    print(" Starting ClipCap Image Captioning...")
     print("=" * 60)
     
     # Check if paths exist
     if not os.path.exists(IMAGE_FOLDER):
-        print(f"❌ Error: Image folder '{IMAGE_FOLDER}' does not exist")
+        print(f" Error: Image folder '{IMAGE_FOLDER}' does not exist")
         print("Please update the IMAGE_FOLDER path in the configuration section")
         return
     
     if not os.path.exists(MODEL_PATH):
-        print(f"❌ Error: Model file '{MODEL_PATH}' does not exist")
+        print(f" Error: Model file '{MODEL_PATH}' does not exist")
         print("Please update the MODEL_PATH in the configuration section")
         return
     
@@ -215,7 +211,7 @@ def run_captioning():
     print(f"🔧 Using device: {device}")
     
     # Install and load CLIP
-    print("📦 Loading CLIP model...")
+    print(" Loading CLIP model...")
     if not install_and_load_clip():
         return
     
@@ -223,18 +219,18 @@ def run_captioning():
     CLIP_MODEL.eval()
     
     # Load GPT-2 tokenizer
-    print("📝 Loading GPT-2 tokenizer...")
+    print(" Loading GPT-2 tokenizer...")
     try:
         tokenizer = GPT2Tokenizer.from_pretrained("gpt2")
         if tokenizer.pad_token is None:
             tokenizer.pad_token = tokenizer.eos_token
-        print("✓ Tokenizer loaded successfully")
+        print(" Tokenizer loaded successfully")
     except Exception as e:
-        print(f"❌ Error loading tokenizer: {e}")
+        print(f" Error loading tokenizer: {e}")
         return
     
     # Load ClipCap model
-    print("🤖 Loading ClipCap model...")
+    print(" Loading ClipCap model...")
     model = load_model(MODEL_PATH, device, PREFIX_LENGTH)
     if model is None:
         return
@@ -246,12 +242,12 @@ def run_captioning():
                    if f.suffix.lower() in image_extensions]
     
     if not image_files:
-        print(f"❌ No image files found in {IMAGE_FOLDER}")
+        print(f" No image files found in {IMAGE_FOLDER}")
         print(f"Supported formats: {', '.join(image_extensions)}")
         return
     
-    print(f"📸 Found {len(image_files)} images")
-    print("🔄 Generating captions...")
+    print(f"Found {len(image_files)} images")
+    print(" Generating captions...")
     print("-" * 60)
     
     # Process images
@@ -267,7 +263,7 @@ def run_captioning():
                 'caption': caption.strip()
             })
             print(f"✓ [{i}/{len(image_files)}] {image_file.name}")
-            print(f"   📝 {caption.strip()}")
+            print(f"    {caption.strip()}")
             print()
             successful += 1
         except Exception as e:
@@ -277,12 +273,12 @@ def run_captioning():
                 'image_path': str(image_file),
                 'caption': error_msg
             })
-            print(f"❌ [{i}/{len(image_files)}] Error processing {image_file.name}: {str(e)}")
+            print(f" [{i}/{len(image_files)}] Error processing {image_file.name}: {str(e)}")
     
-    # Save to Excel
+    
     print("💾 Saving results to Excel...")
     try:
-        # Install openpyxl if not available
+        
         try:
             import openpyxl
         except ImportError:
@@ -291,16 +287,16 @@ def run_captioning():
         
         df = pd.DataFrame(results)
         df.to_excel(OUTPUT_FILE, index=False)
-        print(f"✅ Results saved to {OUTPUT_FILE}")
-        print(f"📊 Successfully processed {successful}/{len(image_files)} images")
+        print(f" Results saved to {OUTPUT_FILE}")
+        print(f" Successfully processed {successful}/{len(image_files)} images")
         
         # Display first few results
-        print("\n📋 Preview of results:")
+        print("\n Preview of results:")
         print(df.head())
         
     except Exception as e:
-        print(f"❌ Error saving to Excel: {e}")
-        print("\n📋 Results (displayed instead):")
+        print(f"Error saving to Excel: {e}")
+        print("\n Results (displayed instead):")
         for result in results:
             print(f"{result['image_name']}: {result['caption']}")
 
@@ -316,11 +312,12 @@ def show_instructions():
     print("2. Run the captioning process:")
     print("   run_captioning()")
     print()
-    print("📁 Make sure your:")
+    print("Make sure your:")
     print("   - Images are in JPG, PNG, BMP, or TIFF format")
     print("   - ClipCap model file is a .pt file")
     print("   - Paths use forward slashes (/)")
 
-# Run instructions by default
+
 show_instructions()
 run_captioning()
+
