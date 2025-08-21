@@ -453,13 +453,13 @@ class ImageCaptioningEvaluator:
         normalized_scores = avg_scores.div(avg_scores.max())
         
         angles = np.linspace(0, 2 * np.pi, len(normalized_scores.columns), endpoint=False).tolist()
-        angles += angles[:1]  # Complete the circle
+        angles += angles[:1]  
         
         colors = ['blue', 'green', 'red', 'orange']
         
         for i, (model, scores) in enumerate(normalized_scores.iterrows()):
             values = scores.tolist()
-            values += values[:1]  # Complete the circle
+            values += values[:1]  
             
             ax.plot(angles, values, 'o-', linewidth=2, label=model, color=colors[i % len(colors)])
             ax.fill(angles, values, alpha=0.25, color=colors[i % len(colors)])
@@ -537,21 +537,22 @@ class ImageCaptioningEvaluator:
         print("EVALUATION COMPLETED!")
         print(f"Results saved to: {output_dir}")
         print("Files created:")
-        print("- detailed_results.csv (per-image scores)")
-        print("- summary_statistics.csv (model averages)")
-        print("- quality_metrics.csv (diversity, length, repetition)")
-        print("- model_rankings.csv (performance rankings)")
-        print("- performance_comparison.png")
-        print("- quality_metrics.png")
-        print("- radar_chart.png")
+        print(" detailed_results.csv (per-image scores)")
+        print(" summary_statistics.csv (model averages)")
+        print(" quality_metrics.csv (diversity, length, repetition)")
+        print(" model_rankings.csv (performance rankings)")
+        print(" performance_comparison.png")
+        print(" quality_metrics.png")
+        print(" radar_chart.png")
         print("="*60)
         
         return output_dir
 
-# Usage
+
 if __name__ == "__main__":
-    # Replace with your CSV file path
+    
     csv_file = "ready_final_file.csv"
     
     evaluator = ImageCaptioningEvaluator(csv_file)
+
     output_directory = evaluator.run_complete_evaluation()
